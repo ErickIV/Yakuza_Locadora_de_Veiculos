@@ -435,26 +435,26 @@ jTextFieldReturnDate.setBorder(BorderFactory.createCompoundBorder(border,
 
     private void jButtonNextPageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNextPageActionPerformed
         if(jComboBoxCar.getSelectedItem() == null){
-            JOptionPane.showMessageDialog(this, "Please select a car from the options.", "WARNING", JOptionPane.WARNING_MESSAGE); 
+            JOptionPane.showMessageDialog(this, "Selecione um carro entre as opções.", "ATENÇÃO", JOptionPane.WARNING_MESSAGE); 
         } else if(jComboBoxCustomer.getSelectedItem() == null){
-            JOptionPane.showMessageDialog(this, "Please select a customer from the options.", "WARNING", JOptionPane.WARNING_MESSAGE); 
+            JOptionPane.showMessageDialog(this, "Selecione um cliente entre as opções.", "ATENÇÃO", JOptionPane.WARNING_MESSAGE); 
         } else if(jComboBoxCar.getSelectedItem() != null && jComboBoxCustomer.getSelectedItem() != null){
             String[] checkPickupDate = jTextFieldPickupDate.getText().split("/");
             String[] checkReturnDate = jTextFieldReturnDate.getText().split("/");
 
             if(checkPickupDate.length != 3){
-                JOptionPane.showMessageDialog(this, "Please enter the correct pickup date format. (DD/MM/YYYY)", "WARNING", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Digite o formato correto da data de retirada. (DD/MM/AAAA)", "ATENÇÃO", JOptionPane.WARNING_MESSAGE);
             } else if(checkReturnDate.length != 3){
-                JOptionPane.showMessageDialog(this, "Please enter the correct return date format. (DD/MM/YYYY)", "WARNING", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Digite o formato correto da data de devolução. (DD/MM/AAAA)", "ATENÇÃO", JOptionPane.WARNING_MESSAGE);
             } else {
 
                 int pickupYear = Integer.parseInt(checkPickupDate[2]);            
                 int returnYear = Integer.parseInt(checkReturnDate[2]);
 
                 if(pickupYear < 1000){
-                    JOptionPane.showMessageDialog(this, "Please check the customer's birthday year.", "WARNING", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Verifique o ano de aniversário do cliente.", "ATENÇÃO", JOptionPane.WARNING_MESSAGE);
                 } else if (returnYear < 1000){
-                    JOptionPane.showMessageDialog(this, "Please check the customer's licence year.", "WARNING", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Verifique o ano da licença do cliente.", "ATENÇÃO", JOptionPane.WARNING_MESSAGE);
                 } 
 
                 
@@ -524,21 +524,21 @@ jTextFieldReturnDate.setBorder(BorderFactory.createCompoundBorder(border,
                                             this.dispose();
                                         }
                                     } else {
-                                        JOptionPane.showMessageDialog(this, "The car is not available on these dates.", "ERROR", JOptionPane.ERROR_MESSAGE);
+                                        JOptionPane.showMessageDialog(this, "O carro não está disponível nessas datas.", "ATENÇÃO", JOptionPane.ERROR_MESSAGE);
                                     }
                                 }
                             } else {
-                                JOptionPane.showMessageDialog(this, "The dates you entered are past.", "ERROR", JOptionPane.ERROR_MESSAGE);
+                                JOptionPane.showMessageDialog(this, "As datas que você inseriu já passaram.", "ERRO", JOptionPane.ERROR_MESSAGE);
                             }
                         } else {
-                            JOptionPane.showMessageDialog(this, "Return date can not be earlier than the pickup date.", "WARNING", JOptionPane.WARNING_MESSAGE); 
+                            JOptionPane.showMessageDialog(this, "A data de devolução não pode ser anterior à data de retirada.", "ATENÇÃO", JOptionPane.WARNING_MESSAGE); 
                         }
                     } else {
-                        JOptionPane.showMessageDialog(this, "The date can not contain any text.", "WARNING", JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(this, "A data não pode conter nenhum texto.", "ATENÇÃO", JOptionPane.WARNING_MESSAGE);
                     }
                 } else {
                     // zaten arabası var
-                    JOptionPane.showMessageDialog(this, "When the customer has a rented car, can not rent a new car.", "WARNING", JOptionPane.WARNING_MESSAGE); 
+                    JOptionPane.showMessageDialog(this, "Quando o cliente tem um carro alugado, não pode alugar um carro novo.", "ATENÇÃO", JOptionPane.WARNING_MESSAGE); 
                 }
             }
         }

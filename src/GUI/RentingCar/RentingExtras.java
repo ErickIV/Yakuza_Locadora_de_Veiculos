@@ -45,12 +45,12 @@ public class RentingExtras extends javax.swing.JFrame {
         jCheckBoxChildSeat = new javax.swing.JCheckBox();
         jLabelNavigation = new javax.swing.JLabel();
         jCheckBoxNavigation = new javax.swing.JCheckBox();
-        jLabelSnowTire = new javax.swing.JLabel();
-        jCheckBoxSnowTire = new javax.swing.JCheckBox();
-        jLabelHGS = new javax.swing.JLabel();
-        jCheckBoxHGS = new javax.swing.JCheckBox();
-        jLabeScooter = new javax.swing.JLabel();
-        jCheckBoxScooter = new javax.swing.JCheckBox();
+        jLabeWiFi = new javax.swing.JLabel();
+        jCheckBoxWiFi = new javax.swing.JCheckBox();
+        jLabelGPS = new javax.swing.JLabel();
+        jCheckBoxGPS = new javax.swing.JCheckBox();
+        jLabeFullTank = new javax.swing.JLabel();
+        jCheckBoxFullTank = new javax.swing.JCheckBox();
         jLabelProtection = new javax.swing.JLabel();
         jLabelTire = new javax.swing.JLabel();
         jCheckBoxTire = new javax.swing.JCheckBox();
@@ -139,36 +139,36 @@ public class RentingExtras extends javax.swing.JFrame {
             }
         });
 
-        jLabelSnowTire.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
-        jLabelSnowTire.setText("WiFi móvel                 R$ 50/dia");
+        jLabeWiFi.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabeWiFi.setText("WiFi móvel                 R$ 50/dia");
 
-        jCheckBoxSnowTire.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBoxSnowTire.setFont(new java.awt.Font("Microsoft JhengHei", 0, 11)); // NOI18N
-        jCheckBoxSnowTire.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBoxWiFi.setBackground(new java.awt.Color(255, 255, 255));
+        jCheckBoxWiFi.setFont(new java.awt.Font("Microsoft JhengHei", 0, 11)); // NOI18N
+        jCheckBoxWiFi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxSnowTireActionPerformed(evt);
+                jCheckBoxWiFiActionPerformed(evt);
             }
         });
 
-        jLabelHGS.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
-        jLabelHGS.setText("GPS                             R$ 60/dia");
+        jLabelGPS.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabelGPS.setText("GPS                             R$ 60/dia");
 
-        jCheckBoxHGS.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBoxHGS.setFont(new java.awt.Font("Microsoft JhengHei", 0, 11)); // NOI18N
-        jCheckBoxHGS.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBoxGPS.setBackground(new java.awt.Color(255, 255, 255));
+        jCheckBoxGPS.setFont(new java.awt.Font("Microsoft JhengHei", 0, 11)); // NOI18N
+        jCheckBoxGPS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxHGSActionPerformed(evt);
+                jCheckBoxGPSActionPerformed(evt);
             }
         });
 
-        jLabeScooter.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
-        jLabeScooter.setText("Tanque Cheio            R$200");
+        jLabeFullTank.setFont(new java.awt.Font("Microsoft JhengHei", 0, 14)); // NOI18N
+        jLabeFullTank.setText("Tanque Cheio            R$200");
 
-        jCheckBoxScooter.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBoxScooter.setFont(new java.awt.Font("Microsoft JhengHei", 0, 11)); // NOI18N
-        jCheckBoxScooter.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBoxFullTank.setBackground(new java.awt.Color(255, 255, 255));
+        jCheckBoxFullTank.setFont(new java.awt.Font("Microsoft JhengHei", 0, 11)); // NOI18N
+        jCheckBoxFullTank.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxScooterActionPerformed(evt);
+                jCheckBoxFullTankActionPerformed(evt);
             }
         });
 
@@ -236,7 +236,7 @@ public class RentingExtras extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
-        jLabel1.setText("R$/day");
+        jLabel1.setText("R$/dia");
 
         javax.swing.GroupLayout jPanelExtrasLayout = new javax.swing.GroupLayout(jPanelExtras);
         jPanelExtras.setLayout(jPanelExtrasLayout);
@@ -246,15 +246,15 @@ public class RentingExtras extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addGroup(jPanelExtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelExtrasLayout.createSequentialGroup()
-                        .addComponent(jLabeScooter)
+                        .addComponent(jLabeFullTank)
                         .addContainerGap())
                     .addGroup(jPanelExtrasLayout.createSequentialGroup()
                         .addGroup(jPanelExtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabelExtras)
                             .addGroup(jPanelExtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(jLabelNavigation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabelHGS, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabelSnowTire, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabelGPS, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabeWiFi, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabelChildSeat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(jPanelExtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelExtrasLayout.createSequentialGroup()
@@ -266,13 +266,13 @@ public class RentingExtras extends javax.swing.JFrame {
                                     .addGroup(jPanelExtrasLayout.createSequentialGroup()
                                         .addGap(18, 18, 18)
                                         .addGroup(jPanelExtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jCheckBoxSnowTire, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jCheckBoxHGS, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jCheckBoxWiFi, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jCheckBoxGPS, javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(jCheckBoxNavigation)
                                             .addComponent(jCheckBoxChildSeat)))
                                     .addGroup(jPanelExtrasLayout.createSequentialGroup()
                                         .addGap(18, 18, 18)
-                                        .addComponent(jCheckBoxScooter)))
+                                        .addComponent(jCheckBoxFullTank)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                                 .addGroup(jPanelExtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jButtonRent, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -320,17 +320,17 @@ public class RentingExtras extends javax.swing.JFrame {
                         .addGroup(jPanelExtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelExtrasLayout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(jCheckBoxSnowTire, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jCheckBoxWiFi, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanelExtrasLayout.createSequentialGroup()
                                 .addGap(29, 29, 29)
-                                .addComponent(jLabelSnowTire)))
+                                .addComponent(jLabeWiFi)))
                         .addGroup(jPanelExtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelExtrasLayout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(jCheckBoxHGS, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jCheckBoxGPS, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanelExtrasLayout.createSequentialGroup()
                                 .addGap(27, 27, 27)
-                                .addComponent(jLabelHGS))))
+                                .addComponent(jLabelGPS))))
                     .addGroup(jPanelExtrasLayout.createSequentialGroup()
                         .addGroup(jPanelExtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jCheckBoxTire, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -359,7 +359,7 @@ public class RentingExtras extends javax.swing.JFrame {
                 .addGroup(jPanelExtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelExtrasLayout.createSequentialGroup()
                         .addGap(28, 28, 28)
-                        .addComponent(jLabeScooter))
+                        .addComponent(jLabeFullTank))
                     .addGroup(jPanelExtrasLayout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(jLabelTotalPrice))
@@ -369,7 +369,7 @@ public class RentingExtras extends javax.swing.JFrame {
                             .addGroup(jPanelExtrasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jTextFieldTotalPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jCheckBoxScooter, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jCheckBoxFullTank, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(16, 16, 16)
                 .addComponent(jButtonRent, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -377,9 +377,9 @@ public class RentingExtras extends javax.swing.JFrame {
 
         jCheckBoxChildSeat.setEnabled(false);
         jCheckBoxNavigation.setEnabled(false);
-        jCheckBoxSnowTire.setEnabled(false);
-        jCheckBoxHGS.setEnabled(false);
-        jCheckBoxScooter.setEnabled(false);
+        jCheckBoxWiFi.setEnabled(false);
+        jCheckBoxGPS.setEnabled(false);
+        jCheckBoxFullTank.setEnabled(false);
         jCheckBoxTire.setEnabled(false);
         jCheckBoxWindow.setEnabled(false);
         jCheckBoxHeadlight.setEnabled(false);
@@ -454,7 +454,7 @@ public class RentingExtras extends javax.swing.JFrame {
         if(jCheckBoxComprehensive.isSelected()){
             price -= 50;
         }
-        if(jCheckBoxHGS.isSelected()){
+        if(jCheckBoxGPS.isSelected()){
             price -= 60;
         }
         if(jCheckBoxHeadlight.isSelected()){
@@ -463,10 +463,10 @@ public class RentingExtras extends javax.swing.JFrame {
         if(jCheckBoxNavigation.isSelected()){
             price -= 20;
         }
-        if(jCheckBoxScooter.isSelected()){
-            price -= 15;
+        if(jCheckBoxFullTank.isSelected()){
+            price -= 200;
         }
-        if(jCheckBoxSnowTire.isSelected()){
+        if(jCheckBoxWiFi.isSelected()){
             price -= 50;
         }
         if(jCheckBoxTire.isSelected()){
@@ -475,7 +475,7 @@ public class RentingExtras extends javax.swing.JFrame {
         if(jCheckBoxWindow.isSelected()){
             price -= 25;
         }
-        jTextFieldTotalPrice.setText(String.valueOf((SystemClass.rentedCar.get(0).additionalPrice(price, jCheckBoxChildSeat.isSelected(), jCheckBoxNavigation.isSelected(), jCheckBoxSnowTire.isSelected(), jCheckBoxHGS.isSelected(), jCheckBoxScooter.isSelected(), jCheckBoxTire.isSelected(), jCheckBoxWindow.isSelected(), jCheckBoxHeadlight.isSelected(), jCheckBoxComprehensive.isSelected()))));
+        jTextFieldTotalPrice.setText(String.valueOf((SystemClass.rentedCar.get(0).additionalPrice(price, jCheckBoxChildSeat.isSelected(), jCheckBoxNavigation.isSelected(), jCheckBoxWiFi.isSelected(), jCheckBoxGPS.isSelected(), jCheckBoxFullTank.isSelected(), jCheckBoxTire.isSelected(), jCheckBoxWindow.isSelected(), jCheckBoxHeadlight.isSelected(), jCheckBoxComprehensive.isSelected()))));
     }//GEN-LAST:event_jCheckBoxChildSeatActionPerformed
 
     private void jCheckBoxNavigationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxNavigationActionPerformed
@@ -486,7 +486,7 @@ public class RentingExtras extends javax.swing.JFrame {
         if(jCheckBoxComprehensive.isSelected()){
             price -= 50;
         }
-        if(jCheckBoxHGS.isSelected()){
+        if(jCheckBoxGPS.isSelected()){
             price -= 60;
         }
         if(jCheckBoxHeadlight.isSelected()){
@@ -495,10 +495,10 @@ public class RentingExtras extends javax.swing.JFrame {
         if(!jCheckBoxNavigation.isSelected()){
             price -= 20;
         }
-        if(jCheckBoxScooter.isSelected()){
+        if(jCheckBoxFullTank.isSelected()){
             price -= 15;
         }
-        if(jCheckBoxSnowTire.isSelected()){
+        if(jCheckBoxWiFi.isSelected()){
             price -= 50;
         }
         if(jCheckBoxTire.isSelected()){
@@ -507,10 +507,10 @@ public class RentingExtras extends javax.swing.JFrame {
         if(jCheckBoxWindow.isSelected()){
             price -= 25;
         }
-        jTextFieldTotalPrice.setText(String.valueOf((SystemClass.rentedCar.get(0).additionalPrice(price, jCheckBoxChildSeat.isSelected(), jCheckBoxNavigation.isSelected(), jCheckBoxSnowTire.isSelected(), jCheckBoxHGS.isSelected(), jCheckBoxScooter.isSelected(), jCheckBoxTire.isSelected(), jCheckBoxWindow.isSelected(), jCheckBoxHeadlight.isSelected(), jCheckBoxComprehensive.isSelected()))));  
+        jTextFieldTotalPrice.setText(String.valueOf((SystemClass.rentedCar.get(0).additionalPrice(price, jCheckBoxChildSeat.isSelected(), jCheckBoxNavigation.isSelected(), jCheckBoxWiFi.isSelected(), jCheckBoxGPS.isSelected(), jCheckBoxFullTank.isSelected(), jCheckBoxTire.isSelected(), jCheckBoxWindow.isSelected(), jCheckBoxHeadlight.isSelected(), jCheckBoxComprehensive.isSelected()))));  
     }//GEN-LAST:event_jCheckBoxNavigationActionPerformed
 
-    private void jCheckBoxHGSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHGSActionPerformed
+    private void jCheckBoxGPSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxGPSActionPerformed
         double price = Double.parseDouble(jTextFieldTotalPrice.getText());
         if(jCheckBoxChildSeat.isSelected()){
             price -= 30;
@@ -518,7 +518,7 @@ public class RentingExtras extends javax.swing.JFrame {
         if(jCheckBoxComprehensive.isSelected()){
             price -= 50;
         }
-        if(!jCheckBoxHGS.isSelected()){
+        if(!jCheckBoxGPS.isSelected()){
             price -= 60;
         }
         if(jCheckBoxHeadlight.isSelected()){
@@ -527,10 +527,10 @@ public class RentingExtras extends javax.swing.JFrame {
         if(jCheckBoxNavigation.isSelected()){
             price -= 20;
         }
-        if(jCheckBoxScooter.isSelected()){
-            price -= 15;
+        if(jCheckBoxFullTank.isSelected()){
+            price -= 200;
         }
-        if(jCheckBoxSnowTire.isSelected()){
+        if(jCheckBoxWiFi.isSelected()){
             price -= 50;
         }
         if(jCheckBoxTire.isSelected()){
@@ -539,10 +539,10 @@ public class RentingExtras extends javax.swing.JFrame {
         if(jCheckBoxWindow.isSelected()){
             price -= 25;
         }
-        jTextFieldTotalPrice.setText(String.valueOf((SystemClass.rentedCar.get(0).additionalPrice(price, jCheckBoxChildSeat.isSelected(), jCheckBoxNavigation.isSelected(), jCheckBoxSnowTire.isSelected(), jCheckBoxHGS.isSelected(), jCheckBoxScooter.isSelected(), jCheckBoxTire.isSelected(), jCheckBoxWindow.isSelected(), jCheckBoxHeadlight.isSelected(), jCheckBoxComprehensive.isSelected()))));  
-    }//GEN-LAST:event_jCheckBoxHGSActionPerformed
+        jTextFieldTotalPrice.setText(String.valueOf((SystemClass.rentedCar.get(0).additionalPrice(price, jCheckBoxChildSeat.isSelected(), jCheckBoxNavigation.isSelected(), jCheckBoxWiFi.isSelected(), jCheckBoxGPS.isSelected(), jCheckBoxFullTank.isSelected(), jCheckBoxTire.isSelected(), jCheckBoxWindow.isSelected(), jCheckBoxHeadlight.isSelected(), jCheckBoxComprehensive.isSelected()))));  
+    }//GEN-LAST:event_jCheckBoxGPSActionPerformed
 
-    private void jCheckBoxSnowTireActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxSnowTireActionPerformed
+    private void jCheckBoxWiFiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxWiFiActionPerformed
         double price = Double.parseDouble(jTextFieldTotalPrice.getText());
         if(jCheckBoxChildSeat.isSelected()){
             price -= 30;
@@ -550,7 +550,7 @@ public class RentingExtras extends javax.swing.JFrame {
         if(jCheckBoxComprehensive.isSelected()){
             price -= 50;
         }
-        if(jCheckBoxHGS.isSelected()){
+        if(jCheckBoxGPS.isSelected()){
             price -= 60;
         }
         if(jCheckBoxHeadlight.isSelected()){
@@ -559,10 +559,10 @@ public class RentingExtras extends javax.swing.JFrame {
         if(jCheckBoxNavigation.isSelected()){
             price -= 20;
         }
-        if(jCheckBoxScooter.isSelected()){
-            price -= 15;
+        if(jCheckBoxFullTank.isSelected()){
+            price -= 200;
         }
-        if(!jCheckBoxSnowTire.isSelected()){
+        if(!jCheckBoxWiFi.isSelected()){
             price -= 50;
         }
         if(jCheckBoxTire.isSelected()){
@@ -571,10 +571,10 @@ public class RentingExtras extends javax.swing.JFrame {
         if(jCheckBoxWindow.isSelected()){
             price -= 25;
         }
-        jTextFieldTotalPrice.setText(String.valueOf((SystemClass.rentedCar.get(0).additionalPrice(price, jCheckBoxChildSeat.isSelected(), jCheckBoxNavigation.isSelected(), jCheckBoxSnowTire.isSelected(), jCheckBoxHGS.isSelected(), jCheckBoxScooter.isSelected(), jCheckBoxTire.isSelected(), jCheckBoxWindow.isSelected(), jCheckBoxHeadlight.isSelected(), jCheckBoxComprehensive.isSelected()))));  
-    }//GEN-LAST:event_jCheckBoxSnowTireActionPerformed
+        jTextFieldTotalPrice.setText(String.valueOf((SystemClass.rentedCar.get(0).additionalPrice(price, jCheckBoxChildSeat.isSelected(), jCheckBoxNavigation.isSelected(), jCheckBoxWiFi.isSelected(), jCheckBoxGPS.isSelected(), jCheckBoxFullTank.isSelected(), jCheckBoxTire.isSelected(), jCheckBoxWindow.isSelected(), jCheckBoxHeadlight.isSelected(), jCheckBoxComprehensive.isSelected()))));  
+    }//GEN-LAST:event_jCheckBoxWiFiActionPerformed
 
-    private void jCheckBoxScooterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxScooterActionPerformed
+    private void jCheckBoxFullTankActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxFullTankActionPerformed
         double price = Double.parseDouble(jTextFieldTotalPrice.getText());
         if(jCheckBoxChildSeat.isSelected()){
             price -= 30;
@@ -582,7 +582,7 @@ public class RentingExtras extends javax.swing.JFrame {
         if(jCheckBoxComprehensive.isSelected()){
             price -= 50;
         }
-        if(jCheckBoxHGS.isSelected()){
+        if(jCheckBoxGPS.isSelected()){
             price -= 60;
         }
         if(jCheckBoxHeadlight.isSelected()){
@@ -591,10 +591,10 @@ public class RentingExtras extends javax.swing.JFrame {
         if(jCheckBoxNavigation.isSelected()){
             price -= 20;
         }
-        if(!jCheckBoxScooter.isSelected()){
-            price -= 15;
+        if(!jCheckBoxFullTank.isSelected()){
+            price -= 200;
         }
-        if(jCheckBoxSnowTire.isSelected()){
+        if(jCheckBoxWiFi.isSelected()){
             price -= 50;
         }
         if(jCheckBoxTire.isSelected()){
@@ -603,8 +603,8 @@ public class RentingExtras extends javax.swing.JFrame {
         if(jCheckBoxWindow.isSelected()){
             price -= 25;
         }
-        jTextFieldTotalPrice.setText(String.valueOf((SystemClass.rentedCar.get(0).additionalPrice(price, jCheckBoxChildSeat.isSelected(), jCheckBoxNavigation.isSelected(), jCheckBoxSnowTire.isSelected(), jCheckBoxHGS.isSelected(), jCheckBoxScooter.isSelected(), jCheckBoxTire.isSelected(), jCheckBoxWindow.isSelected(), jCheckBoxHeadlight.isSelected(), jCheckBoxComprehensive.isSelected()))));  
-    }//GEN-LAST:event_jCheckBoxScooterActionPerformed
+        jTextFieldTotalPrice.setText(String.valueOf((SystemClass.rentedCar.get(0).additionalPrice(price, jCheckBoxChildSeat.isSelected(), jCheckBoxNavigation.isSelected(), jCheckBoxWiFi.isSelected(), jCheckBoxGPS.isSelected(), jCheckBoxFullTank.isSelected(), jCheckBoxTire.isSelected(), jCheckBoxWindow.isSelected(), jCheckBoxHeadlight.isSelected(), jCheckBoxComprehensive.isSelected()))));  
+    }//GEN-LAST:event_jCheckBoxFullTankActionPerformed
 
     private void jCheckBoxTireActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxTireActionPerformed
         double price = Double.parseDouble(jTextFieldTotalPrice.getText());
@@ -614,7 +614,7 @@ public class RentingExtras extends javax.swing.JFrame {
         if(jCheckBoxComprehensive.isSelected()){
             price -= 50;
         }
-        if(jCheckBoxHGS.isSelected()){
+        if(jCheckBoxGPS.isSelected()){
             price -= 60;
         }
         if(jCheckBoxHeadlight.isSelected()){
@@ -623,10 +623,10 @@ public class RentingExtras extends javax.swing.JFrame {
         if(jCheckBoxNavigation.isSelected()){
             price -= 20;
         }
-        if(jCheckBoxScooter.isSelected()){
-            price -= 15;
+        if(jCheckBoxFullTank.isSelected()){
+            price -= 200;
         }
-        if(jCheckBoxSnowTire.isSelected()){
+        if(jCheckBoxWiFi.isSelected()){
             price -= 50;
         }
         if(!jCheckBoxTire.isSelected()){
@@ -635,7 +635,7 @@ public class RentingExtras extends javax.swing.JFrame {
         if(jCheckBoxWindow.isSelected()){
             price -= 25;
         }
-        jTextFieldTotalPrice.setText(String.valueOf((SystemClass.rentedCar.get(0).additionalPrice(price, jCheckBoxChildSeat.isSelected(), jCheckBoxNavigation.isSelected(), jCheckBoxSnowTire.isSelected(), jCheckBoxHGS.isSelected(), jCheckBoxScooter.isSelected(), jCheckBoxTire.isSelected(), jCheckBoxWindow.isSelected(), jCheckBoxHeadlight.isSelected(), jCheckBoxComprehensive.isSelected()))));  
+        jTextFieldTotalPrice.setText(String.valueOf((SystemClass.rentedCar.get(0).additionalPrice(price, jCheckBoxChildSeat.isSelected(), jCheckBoxNavigation.isSelected(), jCheckBoxWiFi.isSelected(), jCheckBoxGPS.isSelected(), jCheckBoxFullTank.isSelected(), jCheckBoxTire.isSelected(), jCheckBoxWindow.isSelected(), jCheckBoxHeadlight.isSelected(), jCheckBoxComprehensive.isSelected()))));  
     }//GEN-LAST:event_jCheckBoxTireActionPerformed
 
     private void jCheckBoxWindowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxWindowActionPerformed
@@ -646,7 +646,7 @@ public class RentingExtras extends javax.swing.JFrame {
         if(jCheckBoxComprehensive.isSelected()){
             price -= 50;
         }
-        if(jCheckBoxHGS.isSelected()){
+        if(jCheckBoxGPS.isSelected()){
             price -= 60;
         }
         if(jCheckBoxHeadlight.isSelected()){
@@ -655,10 +655,10 @@ public class RentingExtras extends javax.swing.JFrame {
         if(jCheckBoxNavigation.isSelected()){
             price -= 20;
         }
-        if(jCheckBoxScooter.isSelected()){
-            price -= 15;
+        if(jCheckBoxFullTank.isSelected()){
+            price -= 200;
         }
-        if(jCheckBoxSnowTire.isSelected()){
+        if(jCheckBoxWiFi.isSelected()){
             price -= 50;
         }
         if(jCheckBoxTire.isSelected()){
@@ -667,7 +667,7 @@ public class RentingExtras extends javax.swing.JFrame {
         if(!jCheckBoxWindow.isSelected()){
             price -= 25;
         }
-        jTextFieldTotalPrice.setText(String.valueOf((SystemClass.rentedCar.get(0).additionalPrice(price, jCheckBoxChildSeat.isSelected(), jCheckBoxNavigation.isSelected(), jCheckBoxSnowTire.isSelected(), jCheckBoxHGS.isSelected(), jCheckBoxScooter.isSelected(), jCheckBoxTire.isSelected(), jCheckBoxWindow.isSelected(), jCheckBoxHeadlight.isSelected(), jCheckBoxComprehensive.isSelected()))));  
+        jTextFieldTotalPrice.setText(String.valueOf((SystemClass.rentedCar.get(0).additionalPrice(price, jCheckBoxChildSeat.isSelected(), jCheckBoxNavigation.isSelected(), jCheckBoxWiFi.isSelected(), jCheckBoxGPS.isSelected(), jCheckBoxFullTank.isSelected(), jCheckBoxTire.isSelected(), jCheckBoxWindow.isSelected(), jCheckBoxHeadlight.isSelected(), jCheckBoxComprehensive.isSelected()))));  
     }//GEN-LAST:event_jCheckBoxWindowActionPerformed
 
     private void jCheckBoxComprehensiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxComprehensiveActionPerformed
@@ -678,7 +678,7 @@ public class RentingExtras extends javax.swing.JFrame {
         if(!jCheckBoxComprehensive.isSelected()){
             price -= 50;
         }
-        if(jCheckBoxHGS.isSelected()){
+        if(jCheckBoxGPS.isSelected()){
             price -= 60;
         }
         if(jCheckBoxHeadlight.isSelected()){
@@ -687,10 +687,10 @@ public class RentingExtras extends javax.swing.JFrame {
         if(jCheckBoxNavigation.isSelected()){
             price -= 20;
         }
-        if(jCheckBoxScooter.isSelected()){
-            price -= 15;
+        if(jCheckBoxFullTank.isSelected()){
+            price -= 200;
         }
-        if(jCheckBoxSnowTire.isSelected()){
+        if(jCheckBoxWiFi.isSelected()){
             price -= 50;
         }
         if(jCheckBoxTire.isSelected()){
@@ -699,7 +699,7 @@ public class RentingExtras extends javax.swing.JFrame {
         if(jCheckBoxWindow.isSelected()){
             price -= 25;
         }
-        jTextFieldTotalPrice.setText(String.valueOf((SystemClass.rentedCar.get(0).additionalPrice(price, jCheckBoxChildSeat.isSelected(), jCheckBoxNavigation.isSelected(), jCheckBoxSnowTire.isSelected(), jCheckBoxHGS.isSelected(), jCheckBoxScooter.isSelected(), jCheckBoxTire.isSelected(), jCheckBoxWindow.isSelected(), jCheckBoxHeadlight.isSelected(), jCheckBoxComprehensive.isSelected()))));  
+        jTextFieldTotalPrice.setText(String.valueOf((SystemClass.rentedCar.get(0).additionalPrice(price, jCheckBoxChildSeat.isSelected(), jCheckBoxNavigation.isSelected(), jCheckBoxWiFi.isSelected(), jCheckBoxGPS.isSelected(), jCheckBoxFullTank.isSelected(), jCheckBoxTire.isSelected(), jCheckBoxWindow.isSelected(), jCheckBoxHeadlight.isSelected(), jCheckBoxComprehensive.isSelected()))));  
     }//GEN-LAST:event_jCheckBoxComprehensiveActionPerformed
 
     private void jCheckBoxHeadlightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxHeadlightActionPerformed
@@ -710,7 +710,7 @@ public class RentingExtras extends javax.swing.JFrame {
         if(jCheckBoxComprehensive.isSelected()){
             price -= 50;
         }
-        if(jCheckBoxHGS.isSelected()){
+        if(jCheckBoxGPS.isSelected()){
             price -= 60;
         }
         if(!jCheckBoxHeadlight.isSelected()){
@@ -719,10 +719,10 @@ public class RentingExtras extends javax.swing.JFrame {
         if(jCheckBoxNavigation.isSelected()){
             price -= 20;
         }
-        if(jCheckBoxScooter.isSelected()){
-            price -= 15;
+        if(jCheckBoxFullTank.isSelected()){
+            price -= 200;
         }
-        if(jCheckBoxSnowTire.isSelected()){
+        if(jCheckBoxWiFi.isSelected()){
             price -= 50;
         }
         if(jCheckBoxTire.isSelected()){
@@ -731,7 +731,7 @@ public class RentingExtras extends javax.swing.JFrame {
         if(jCheckBoxWindow.isSelected()){
             price -= 25;
         }
-        jTextFieldTotalPrice.setText(String.valueOf((SystemClass.rentedCar.get(0).additionalPrice(price, jCheckBoxChildSeat.isSelected(), jCheckBoxNavigation.isSelected(), jCheckBoxSnowTire.isSelected(), jCheckBoxHGS.isSelected(), jCheckBoxScooter.isSelected(), jCheckBoxTire.isSelected(), jCheckBoxWindow.isSelected(), jCheckBoxHeadlight.isSelected(), jCheckBoxComprehensive.isSelected()))));  
+        jTextFieldTotalPrice.setText(String.valueOf((SystemClass.rentedCar.get(0).additionalPrice(price, jCheckBoxChildSeat.isSelected(), jCheckBoxNavigation.isSelected(), jCheckBoxWiFi.isSelected(), jCheckBoxGPS.isSelected(), jCheckBoxFullTank.isSelected(), jCheckBoxTire.isSelected(), jCheckBoxWindow.isSelected(), jCheckBoxHeadlight.isSelected(), jCheckBoxComprehensive.isSelected()))));  
     }//GEN-LAST:event_jCheckBoxHeadlightActionPerformed
 
     private void jButtonUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUpdateActionPerformed
@@ -744,11 +744,11 @@ public class RentingExtras extends javax.swing.JFrame {
         
         jCheckBoxChildSeat.setEnabled(true);
         jCheckBoxComprehensive.setEnabled(true);
-        jCheckBoxHGS.setEnabled(true);
+        jCheckBoxGPS.setEnabled(true);
         jCheckBoxHeadlight.setEnabled(true);
         jCheckBoxNavigation.setEnabled(true);
-        jCheckBoxScooter.setEnabled(true);
-        jCheckBoxSnowTire.setEnabled(true);
+        jCheckBoxFullTank.setEnabled(true);
+        jCheckBoxWiFi.setEnabled(true);
         jCheckBoxTire.setEnabled(true);
         jCheckBoxWindow.setEnabled(true);
         
@@ -786,25 +786,25 @@ public class RentingExtras extends javax.swing.JFrame {
     private javax.swing.JButton jButtonUpdate;
     private javax.swing.JCheckBox jCheckBoxChildSeat;
     private javax.swing.JCheckBox jCheckBoxComprehensive;
-    private javax.swing.JCheckBox jCheckBoxHGS;
+    private javax.swing.JCheckBox jCheckBoxFullTank;
+    private javax.swing.JCheckBox jCheckBoxGPS;
     private javax.swing.JCheckBox jCheckBoxHeadlight;
     private javax.swing.JCheckBox jCheckBoxNavigation;
-    private javax.swing.JCheckBox jCheckBoxScooter;
-    private javax.swing.JCheckBox jCheckBoxSnowTire;
     private javax.swing.JCheckBox jCheckBoxTire;
+    private javax.swing.JCheckBox jCheckBoxWiFi;
     private javax.swing.JCheckBox jCheckBoxWindow;
-    private javax.swing.JLabel jLabeScooter;
+    private javax.swing.JLabel jLabeFullTank;
+    private javax.swing.JLabel jLabeWiFi;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelChildSeat;
     private javax.swing.JLabel jLabelComprehensive;
     private javax.swing.JLabel jLabelExtras;
-    private javax.swing.JLabel jLabelHGS;
+    private javax.swing.JLabel jLabelGPS;
     private javax.swing.JLabel jLabelHeadlight;
     private javax.swing.JLabel jLabelImportant;
     private javax.swing.JLabel jLabelNavigation;
     private javax.swing.JLabel jLabelProtection;
     private javax.swing.JLabel jLabelRentCar;
-    private javax.swing.JLabel jLabelSnowTire;
     private javax.swing.JLabel jLabelTire;
     private javax.swing.JLabel jLabelTotalPrice;
     private javax.swing.JLabel jLabelWindow;

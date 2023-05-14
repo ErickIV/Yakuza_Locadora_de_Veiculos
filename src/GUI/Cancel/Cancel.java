@@ -391,7 +391,7 @@ jButtonCancel.addActionListener(new java.awt.event.ActionListener() {
             }
         }
         
-        jLabelCancel.setText("Cancel Reservation");
+        jLabelCancel.setText("Cancelar reserva");
     }//GEN-LAST:event_jButtonUpdateActionPerformed
 
     private void jComboBoxSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSearchActionPerformed
@@ -430,13 +430,13 @@ jButtonCancel.addActionListener(new java.awt.event.ActionListener() {
             jTextFieldModel.setText("");
             jTextFieldPrice.setText("");
             
-            JOptionPane.showMessageDialog(this, "Reservation was canceled successfully.", "INFORMATION", JOptionPane.INFORMATION_MESSAGE); 
+            JOptionPane.showMessageDialog(this, "A reserva foi cancelada com sucesso.", "INFORMAÇÃO", JOptionPane.INFORMATION_MESSAGE); 
 
             RentingInformation RentingInformation = new RentingInformation();
             RentingInformation.setVisible(true);
             this.dispose();
         } else {
-            JOptionPane.showMessageDialog(this, "The reservation could not be canceled.", "ERROR", JOptionPane.ERROR); 
+            JOptionPane.showMessageDialog(this, "A reserva não pôde ser cancelada.", "ERRO", JOptionPane.ERROR); 
         }
     }//GEN-LAST:event_jButtonCancelActionPerformed
 
