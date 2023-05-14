@@ -13,7 +13,7 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author ereno
+ * @author RafaelSonoki
  */
 public class SystemClass {
     public static ArrayList<Person> customers = new ArrayList<>();

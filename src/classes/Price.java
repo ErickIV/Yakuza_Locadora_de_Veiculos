@@ -7,7 +7,7 @@ package classes;
 
 /**
  *
- * @author ereno
+ * @author RafaelSonoki
  */
 public interface Price {  
     public double additionalPrice(double price, boolean childSeat, boolean navigation, boolean snowTire, boolean HGS, boolean scooter, boolean tireProtection, boolean windowProtection, boolean headlightProtection, boolean comprehensiveProtection);

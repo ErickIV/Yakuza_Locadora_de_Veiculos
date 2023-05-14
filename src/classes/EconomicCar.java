@@ -8,7 +8,7 @@ package classes;
 
 /**
  *
- * @author ereno
+ * @author RafaelSonoki
  */
 public class EconomicCar extends Car{
 
