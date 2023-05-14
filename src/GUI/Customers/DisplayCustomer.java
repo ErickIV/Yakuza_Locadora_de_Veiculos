@@ -461,7 +461,7 @@ jTextFieldEmail.addActionListener(new java.awt.event.ActionListener() {
             jComboBoxID.insertItemAt(customer.getIdNumber(), 0);
         }    
         
-        jLabelCustomers.setText("Customers");
+        jLabelCustomers.setText("Clientes");
         jTextFieldName.setText("");
         jTextFieldSurname.setText("");
         jTextFieldNationality.setText("");
@@ -493,9 +493,9 @@ jTextFieldEmail.addActionListener(new java.awt.event.ActionListener() {
         String[] licenceDate = jTextFieldDriversLicenceDate.getText().split("/");
         
         if(birthdayDate.length != 3){
-            JOptionPane.showMessageDialog(this, "Please enter the correct birthday date format. (DD/MM/YYYY)", "WARNING", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Digite o formato correto da data de aniversário. (DD/MM/AAAA)", "ATENÇÃO", JOptionPane.WARNING_MESSAGE);
         } else if(licenceDate.length != 3){
-            JOptionPane.showMessageDialog(this, "Please enter the correct licence date format. (DD/MM/YYYY)", "WARNING", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Digite o formato correto da data da licença. (DD/MM/AAAA)", "ATENÇÃO", JOptionPane.WARNING_MESSAGE);
         } else {
             int birthdayDay = Integer.parseInt(birthdayDate[0]);
             int birthdayMonth = Integer.parseInt(birthdayDate[1]);
@@ -506,21 +506,21 @@ jTextFieldEmail.addActionListener(new java.awt.event.ActionListener() {
             int licenceYear = Integer.parseInt(licenceDate[2]);
             
             if(birthdayYear < 1000){
-                JOptionPane.showMessageDialog(this, "Please check the customer's birthday year.", "WARNING", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Verifique o ano de aniversário do cliente.", "ATENÇÃO", JOptionPane.WARNING_MESSAGE);
             } else if (licenceYear < 1000){
-                JOptionPane.showMessageDialog(this, "Please check the customer's licence year.", "WARNING", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Verifique o ano da habilitação do cliente.", "ATENÇÃO", JOptionPane.WARNING_MESSAGE);
             } else {
                 if(!SystemClass.isNumeric(jTextFieldIDNumber.getText())){
-                    JOptionPane.showMessageDialog(this, "Please enter a numeric value for ID number field.", "WARNING", JOptionPane.WARNING_MESSAGE); 
+                    JOptionPane.showMessageDialog(this, "Digite um valor numérico para o campo de número de ID.", "ATENÇÃO", JOptionPane.WARNING_MESSAGE); 
                 } else if(!SystemClass.isNumeric(jTextFieldPhone.getText())){
-                    JOptionPane.showMessageDialog(this, "Please enter a numeric value for phone field.", "WARNING", JOptionPane.WARNING_MESSAGE); 
+                    JOptionPane.showMessageDialog(this, "Digite um valor numérico para o campo celular.", "ATENÇÃO", JOptionPane.WARNING_MESSAGE); 
                 }else if(!jTextFieldName.getText().equals("") && !jTextFieldSurname.getText().equals("") && !jTextFieldNationality.getText().equals("") && !jTextFieldIDNumber.getText().equals("") && !jTextFieldPhone.getText().equals("") && !jTextFieldEmail.getText().equals("")){
                     if((currentDate.get(Calendar.YEAR) - licenceYear < 2) && (currentDate.get(Calendar.YEAR) - birthdayYear < 21)){
-                        JOptionPane.showMessageDialog(this, "The age of the customer can not be less than 21 and the driver's license age can not be less than 2.", "WARNING", JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(this, "A idade do cliente não pode ser inferior a 21 anos e a idade da carteira de motorista não pode ser inferior a 2 anos..", "ATENÇÃO", JOptionPane.WARNING_MESSAGE);
                     } else if(currentDate.get(Calendar.YEAR) - birthdayYear < 21){
-                        JOptionPane.showMessageDialog(this, "The age of the customer can not be less than 21.", "WARNING", JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(this, "A idade do cliente não pode ser inferior a 21 anos.", "ATENÇÃO", JOptionPane.WARNING_MESSAGE);
                     } else if((currentDate.get(Calendar.YEAR) - licenceYear < 2)){
-                        JOptionPane.showMessageDialog(this, "The driver's license age of the customer can not be less than 2.", "WARNING", JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(this, "A idade da carteira de motorista do cliente não pode ser inferior a 2 anos.", "ATENÇÃO", JOptionPane.WARNING_MESSAGE);
                     } else {
                         SystemClass.customers.get(position).setName(jTextFieldName.getText());
                         SystemClass.customers.get(position).setSurname(jTextFieldSurname.getText());
@@ -541,10 +541,10 @@ jTextFieldEmail.addActionListener(new java.awt.event.ActionListener() {
                         jTextFieldEmail.setEnabled(false);
                         jButtonSave.setEnabled(false);
                         
-                        JOptionPane.showMessageDialog(this, "Customer information updated successfully.", "SUCCESSFUL", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(this, "Informações do cliente atualizadas com sucesso.", "BEM-SUCEDIDO", JOptionPane.INFORMATION_MESSAGE);
                     }
                 } else {
-                    JOptionPane.showMessageDialog(this, "Please fill in all fields.", "WARNING", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Preencha todos os campos.", "ATENÇÃO", JOptionPane.WARNING_MESSAGE);
                 }
             }
         }
@@ -569,12 +569,12 @@ jTextFieldEmail.addActionListener(new java.awt.event.ActionListener() {
             jTextFieldDriversLicenceDate.setText("");
             jTextFieldPhone.setText("");
             jTextFieldEmail.setText("");
-            jLabelCustomers.setText("Please update the page.");
+            jLabelCustomers.setText("Por favor, atualize a página.");
             
-            JOptionPane.showMessageDialog(this, "The customer was successfully deleted.", "SUCCESSFUL", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "O cliente foi excluído com sucesso.", "BEM-SUCEDIDO", JOptionPane.INFORMATION_MESSAGE);
         }
         else {
-            JOptionPane.showMessageDialog(this, "The customer could not be deleted.", "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "O cliente não pôde ser excluído.", "ERRO", JOptionPane.ERROR_MESSAGE);
         }
         
     }//GEN-LAST:event_jButtonDeleteActionPerformed
