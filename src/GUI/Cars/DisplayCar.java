@@ -454,7 +454,7 @@ jTextFieldPrice.setBorder(BorderFactory.createCompoundBorder(border,
         for (Car car : SystemClass.cars) {
             jComboBoxSearch.insertItemAt(car.getBrand() + " " + car.getModel() + " (" + car.getModelYear() + ")", 0);
         }
-        jLabelCars.setText("Cars");
+        jLabelCars.setText("Carros");
         jTextFieldCarID.setText("");
         jTextFieldBrand.setText("");
         jTextFieldModel.setText("");
@@ -493,16 +493,16 @@ jTextFieldPrice.setBorder(BorderFactory.createCompoundBorder(border,
         int position = SystemClass.searchCarByBrand(jComboBoxSearch);
         
         if(!SystemClass.isNumeric(jTextFieldModelYear.getText())){
-            JOptionPane.showMessageDialog(this, "Please enter a numeric value for year field.", "WARNING", JOptionPane.WARNING_MESSAGE); 
+            JOptionPane.showMessageDialog(this, "Digite um valor numérico para o campo ano.", "ATENÇÃO", JOptionPane.WARNING_MESSAGE); 
         } else if (!SystemClass.isNumeric(jTextFieldPrice.getText())){
-            JOptionPane.showMessageDialog(this, "Please enter a numeric value for price field.", "WARNING", JOptionPane.WARNING_MESSAGE); 
+            JOptionPane.showMessageDialog(this, "Digite um valor numérico para o campo de preço.", "ATENÇÃO", JOptionPane.WARNING_MESSAGE); 
         } else if(SystemClass.isNumeric(jTextFieldModelYear.getText()) && SystemClass.isNumeric(jTextFieldPrice.getText())){
             int modelYear = Integer.parseInt(jTextFieldModelYear.getText());
             double price = Double.parseDouble(jTextFieldPrice.getText());
             
             if(!jTextFieldBrand.getText().equals("") && !jTextFieldModel.getText().equals("") && !jTextFieldFuelType.getText().equals("") && !jTextFieldGearType.getText().equals("") && !String.valueOf(jTextFieldModelYear.getText()).equals("") && !String.valueOf(jTextFieldPrice.getText()).equals("")){
                 if (jComboBoxCarType.getSelectedItem() == null){
-                    JOptionPane.showMessageDialog(this, "Please choose a car type.", "WARNING", JOptionPane.WARNING_MESSAGE); 
+                    JOptionPane.showMessageDialog(this, "Escolha um tipo de carro.", "ATENÇÃO", JOptionPane.WARNING_MESSAGE); 
                 } else {
                     SystemClass.cars.get(position).setBrand(jTextFieldBrand.getText());
                     SystemClass.cars.get(position).setModel(jTextFieldModel.getText());
@@ -521,10 +521,10 @@ jTextFieldPrice.setBorder(BorderFactory.createCompoundBorder(border,
                     jTextFieldPrice.setEnabled(false);
                     jButtonSave.setEnabled(false);
                     
-                    JOptionPane.showMessageDialog(this, "Car information updated successfully.", "SUCCESSFUL", JOptionPane.INFORMATION_MESSAGE); 
+                    JOptionPane.showMessageDialog(this, "Informações do veículo atualizadas com sucesso.", "BEM-SUCEDIDO", JOptionPane.INFORMATION_MESSAGE); 
                 }
             } else {
-                JOptionPane.showMessageDialog(this, "Please fill in all fields.", "WARNING", JOptionPane.WARNING_MESSAGE); 
+                JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos.", "ATENÇÃO", JOptionPane.WARNING_MESSAGE); 
             }
         }
     }//GEN-LAST:event_jButtonSaveActionPerformed
@@ -548,11 +548,11 @@ jTextFieldPrice.setBorder(BorderFactory.createCompoundBorder(border,
             jComboBoxCarType.setSelectedIndex(-1);
             jTextFieldModelYear.setText("");
             jTextFieldPrice.setText("");
-            jLabelCars.setText("Please update the page.");
+            jLabelCars.setText("Por favor, atualize a página.");
             
-            JOptionPane.showMessageDialog(this, "The car was successfully deleted.", "SUCCESSFUL", JOptionPane.INFORMATION_MESSAGE); 
+            JOptionPane.showMessageDialog(this, "O veículo foi excluído com sucesso.", "BEM-SUCEDIDO", JOptionPane.INFORMATION_MESSAGE); 
         } else {
-            JOptionPane.showMessageDialog(this, "The car could not be deleted.", "ERROR", JOptionPane.ERROR_MESSAGE); 
+            JOptionPane.showMessageDialog(this, "O veículo não pôde ser excluído.", "ERRO", JOptionPane.ERROR_MESSAGE); 
         }
         
         
