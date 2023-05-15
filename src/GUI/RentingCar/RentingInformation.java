@@ -145,7 +145,7 @@ public class RentingInformation extends javax.swing.JFrame {
         jLabelCustomerInfo.setToolTipText("");
 
         jLabelCustomerID.setFont(new java.awt.Font("Microsoft JhengHei", 1, 12)); // NOI18N
-        jLabelCustomerID.setText("Numedo da Habilitação");
+        jLabelCustomerID.setText("Numero da Habilitação");
 
         jComboBoxCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
