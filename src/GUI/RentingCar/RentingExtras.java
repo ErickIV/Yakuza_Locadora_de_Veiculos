@@ -769,7 +769,7 @@ public class RentingExtras extends javax.swing.JFrame {
         SystemClass.rentedCar.clear();
         SystemClass.rentedCustomer.clear();
         
-        JOptionPane.showMessageDialog(this, "The car is successfully rented.", "SUCCESSFUL", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, "O veículo foi alugado com sucesso.", "BEM-SUCEDIDA", JOptionPane.INFORMATION_MESSAGE);
 
         RentingInformation RentingInformation = new RentingInformation();
         RentingInformation.setVisible(true);

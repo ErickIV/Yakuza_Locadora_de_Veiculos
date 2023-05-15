@@ -11,7 +11,8 @@ import java.util.GregorianCalendar;
 
 /**
  *
- * @author ereno
+ * @author Erick
+ * @author Rafael
  */
 public abstract class Car implements Price {
     private int carID;
@@ -27,9 +28,9 @@ public abstract class Car implements Price {
     public ArrayList<String> rentedPrice = new ArrayList<>();
     private boolean childSeat;
     private boolean navigationSystem;
-    private boolean snowTire;
-    private boolean HGS;
-    private boolean scooter;
+    private boolean WiFi;
+    private boolean GPS;
+    private boolean FullTank;
     private boolean tireProtection;
     private boolean windowProtection;
     private boolean headlightProtection;

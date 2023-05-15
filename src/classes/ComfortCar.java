@@ -7,7 +7,8 @@ package classes;
 
 /**
  *
- * @author ereno
+ * @author Erick
+ * @author Rafael
  */
 public class ComfortCar extends Car{
 
@@ -29,20 +30,20 @@ public class ComfortCar extends Car{
     }
 
     @Override
-    public double additionalPrice(double price, boolean childSeat, boolean navigation, boolean snowTire, boolean HGS, boolean scooter, boolean tireProtection, boolean windowProtection, boolean headlightProtection, boolean comprehensiveProtection) {
+    public double additionalPrice(double price, boolean childSeat, boolean navigation, boolean WiFi, boolean GPS, boolean FullTank, boolean tireProtection, boolean windowProtection, boolean headlightProtection, boolean comprehensiveProtection) {
         if(childSeat){
             price += 30;
         }
         if(navigation){
             price += 20;
         }
-        if(snowTire){
+        if(WiFi){
             price += 50;
         }
-        if(HGS){
+        if(GPS){
             price += 60;
         }
-        if(scooter){
+        if(FullTank){
             price += 15;
         }
         if(tireProtection){

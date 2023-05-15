@@ -9,7 +9,8 @@ import java.util.ArrayList;
 
 /**
  *
- * @author ereno
+ * @author Erick
+ * @author Rafael
  */
 public class Person {
     private String name;

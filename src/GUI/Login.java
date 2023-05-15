@@ -128,7 +128,7 @@ jPanelLoginLayout.setHorizontalGroup(
 
     jLabelLogin.setFont(new java.awt.Font("Microsoft JhengHei", 0, 36)); // NOI18N
     jLabelLogin.setForeground(new java.awt.Color(255, 255, 255));
-    jLabelLogin.setText("Yakuza Aluguél de Veículos");
+    jLabelLogin.setText("Yakuza Aluguel de Veículos");
     jPanel1.add(jLabelLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, -1, -1));
 
     jLabelBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/loginBackground.png"))); // NOI18N
@@ -200,20 +200,20 @@ jPanelLoginLayout.setHorizontalGroup(
                 Login Login = new Login();
                 Login.setVisible(true);
                 
-                Person RafaelSonoki = new Person("Rafael", "Sonoki", "T.C.", "25474284635", "05/07/1995", "24/03/2017", "48984252659", "rafaelsonoki@hotmail.com");
-                Person ErickVieira = new Person("Erick", "Vieira", "T.C", "00849341906", "13/03/1994", "18/03/2020", "48999101832", "erickvieira@outlook.com");
-                Person GuilhermeMenegotto = new Person("Guilherme", "Menegotto", "T.C.", "14865923547", "19/07/2000", "04/12/2018", "5456317589", "guimenegotoo@outlook.com");
+                Person RafaelSonoki = new Person("Rafael", "Sonoki", "Brasileiro", "25474284635", "05/07/1995", "24/03/2017", "48984252659", "rafaelsonoki@hotmail.com");
+                Person ErickVieira = new Person("Erick", "Vieira", "Brasileiro", "00849341906", "13/03/1994", "18/03/2020", "48999101832", "erickvieira@outlook.com");
+                Person GuilhermeMenegotto = new Person("Guilherme", "Menegotto", "Brasileiro", "14865923547", "19/07/2000", "04/12/2018", "5456317589", "guimenegotoo@outlook.com");
                 
                 SystemClass.customers.add(RafaelSonoki);
                 SystemClass.customers.add(ErickVieira);
                 SystemClass.customers.add(GuilhermeMenegotto);
                 
-                EconomicCar renaultSymbol = new EconomicCar(1, "Renault", "Symbol", "Gasoline", "Manuel", 2017, 137);
-                EconomicCar hyundaiHB20 = new EconomicCar(2, "Hyundai", "HB20", "Gasoline", "Automatic", 2018, 140);
-                ComfortCar toyotaCorolla = new ComfortCar(3, "Toyota", "Corolla", "Fuel", "Automatic", 2018, 190);
-                ComfortCar nissanVersa = new ComfortCar(4, "Nissan", "Versa", "Gasoline", "Automatic", 2019, 240);
-                LuxuryCar audiA3 = new LuxuryCar(5, "Audi", "A3", "Gasoline", "Automatic", 2019, 392.48);
-                LuxuryCar mercedesC200d = new LuxuryCar(6, "Mercedes-Benz", "C 200 d", "Fuel", "Automatic", 2020, 597.70);
+                EconomicCar renaultSymbol = new EconomicCar(1, "Renault", "Symbol", "Gasolina", "Manual", 2017, 137);
+                EconomicCar hyundaiHB20 = new EconomicCar(2, "Hyundai", "HB20", "Gasolina", "automáticoo", 2018, 140);
+                ComfortCar toyotaCorolla = new ComfortCar(3, "Toyota", "Corolla", "Gasolina", "automáticoo", 2018, 190);
+                ComfortCar nissanVersa = new ComfortCar(4, "Nissan", "Versa", "Gasolina", "automáticoo", 2019, 240);
+                LuxuryCar audiA3 = new LuxuryCar(5, "Audi", "A3", "Gasolina", "automáticoo", 2019, 392.48);
+                LuxuryCar mercedesC200d = new LuxuryCar(6, "Mercedes-Benz", "C 200 d", "Gasolina", "automáticoo", 2020, 597.70);
                
                 SystemClass.cars.add(renaultSymbol);
                 SystemClass.cars.add(hyundaiHB20);
