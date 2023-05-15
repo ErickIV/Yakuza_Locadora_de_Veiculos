@@ -28,9 +28,9 @@ public abstract class Car implements Price {
     public ArrayList<String> rentedPrice = new ArrayList<>();
     private boolean childSeat;
     private boolean navigationSystem;
-    private boolean WiFi;
-    private boolean GPS;
-    private boolean FullTank;
+    private boolean wiFi;
+    private boolean gps;
+    private boolean fullTank;
     private boolean tireProtection;
     private boolean windowProtection;
     private boolean headlightProtection;

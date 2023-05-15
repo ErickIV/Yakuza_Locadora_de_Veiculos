@@ -30,20 +30,20 @@ public class ComfortCar extends Car{
     }
 
     @Override
-    public double additionalPrice(double price, boolean childSeat, boolean navigation, boolean WiFi, boolean GPS, boolean FullTank, boolean tireProtection, boolean windowProtection, boolean headlightProtection, boolean comprehensiveProtection) {
+    public double additionalPrice(double price, boolean childSeat, boolean navigation, boolean wiFi, boolean gps, boolean fullTank, boolean tireProtection, boolean windowProtection, boolean headlightProtection, boolean comprehensiveProtection) {
         if(childSeat){
             price += 30;
         }
         if(navigation){
             price += 20;
         }
-        if(WiFi){
+        if(wiFi){
             price += 50;
         }
-        if(GPS){
+        if(gps){
             price += 60;
         }
-        if(FullTank){
+        if(fullTank){
             price += 15;
         }
         if(tireProtection){

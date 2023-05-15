@@ -11,5 +11,5 @@ package classes;
  * @author Rafael
  */
 public interface Price {  
-    public double additionalPrice(double price, boolean childSeat, boolean navigation, boolean WiFi, boolean GPS, boolean FullTank, boolean tireProtection, boolean windowProtection, boolean headlightProtection, boolean comprehensiveProtection);
+    public double additionalPrice(double price, boolean childSeat, boolean navigation, boolean wiFi, boolean gps, boolean fullTank, boolean tireProtection, boolean windowProtection, boolean headlightProtection, boolean comprehensiveProtection);
 }
