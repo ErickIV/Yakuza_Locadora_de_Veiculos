@@ -16,6 +16,7 @@ import javax.swing.BorderFactory;
 import javax.swing.border.Border;
 import java.awt.Color;
 import javax.swing.JOptionPane;
+import Interface.ServiceInterface;
 
 
 /**
@@ -29,6 +30,8 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
     }
+
+    Boolean tryLogin;
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -151,19 +154,25 @@ jPanelLoginLayout.setHorizontalGroup(
 
     private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
         
-        String username = jTextFieldUsername.getText();
-        String password = jPasswordField1.getText();
         
-        if(username.equals("admin") && password.equals("admin")){
+        GUI.Interface.ServiceInterface.username = jTextFieldUsername.getText();
+        GUI.Interface.ServiceInterface.password = jPasswordField1.getText();
+        set.tryLogin = true;
+        
+        if(tryLogin = true){
+            if (GUI.Interface.ServiceInterface.loginRequest == true){
             RentingInformation RentingInformation = new RentingInformation();
             RentingInformation.setVisible(true);
             this.dispose();
-        } else if(username.equals("")){
+            set.tryLogin = false;
+            
+            } else if(GUI.Interface.ServiceInterface.loginMessage == 1){
             JOptionPane.showMessageDialog(this, "Digite um nome de usuário.", "AVISO", JOptionPane.WARNING_MESSAGE); 
-        } else if(password.equals("")){
+            } else if(password.equals("")){
             JOptionPane.showMessageDialog(this, "Digite uma senha.", "AVISO", JOptionPane.WARNING_MESSAGE); 
-        } else {
+            } else {
             JOptionPane.showMessageDialog(this, "O nome de usuário ou a senha não está correto.", "ERROR", JOptionPane.ERROR_MESSAGE); 
+            }
         }
     }//GEN-LAST:event_jButtonLoginActionPerformed
 
@@ -171,11 +180,10 @@ jPanelLoginLayout.setHorizontalGroup(
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+
+
+
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
