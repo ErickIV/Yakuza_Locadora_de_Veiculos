@@ -16,6 +16,11 @@ import javax.swing.BorderFactory;
 import javax.swing.border.Border;
 import java.awt.Color;
 import javax.swing.JOptionPane;
+import GUI.Interface.ServiceInterface;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 
 
 /**
@@ -29,6 +34,7 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
     }
+
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -151,31 +157,48 @@ jPanelLoginLayout.setHorizontalGroup(
 
     private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
         
+        try{
+            Registry registry = LocateRegistry.getRegistry("localhost");
+            Object obj = registry.lookup("rentalServer");
+            ServiceInterface serviceInterface = (ServiceInterface) obj;
+            
+
         String username = jTextFieldUsername.getText();
         String password = jPasswordField1.getText();
+        Boolean tryLogin = true;
         
-        if(username.equals("admin") && password.equals("admin")){
+        while(tryLogin == true){
+            
+            int validation = serviceInterface.loginRequest(username, password);
+            
+            if (validation == 1){
             RentingInformation RentingInformation = new RentingInformation();
             RentingInformation.setVisible(true);
             this.dispose();
-        } else if(username.equals("")){
+            tryLogin = false;
+            
+            } else if(validation == 2){
             JOptionPane.showMessageDialog(this, "Digite um nome de usuário.", "AVISO", JOptionPane.WARNING_MESSAGE); 
-        } else if(password.equals("")){
+            } else if(validation == 3){
             JOptionPane.showMessageDialog(this, "Digite uma senha.", "AVISO", JOptionPane.WARNING_MESSAGE); 
-        } else {
+            } else {
             JOptionPane.showMessageDialog(this, "O nome de usuário ou a senha não está correto.", "ERROR", JOptionPane.ERROR_MESSAGE); 
+            }
         }
+    }catch (RemoteException ree){
+        System.out.println("Excecao: " + ree.getMessage());
+    }catch(NotBoundException nbe){
+        System.out.println("Excecao: " + nbe.getMessage());
+    }
     }//GEN-LAST:event_jButtonLoginActionPerformed
-
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+
+
+
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
