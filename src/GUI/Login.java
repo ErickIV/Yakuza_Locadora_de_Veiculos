@@ -16,11 +16,11 @@ import javax.swing.BorderFactory;
 import javax.swing.border.Border;
 import java.awt.Color;
 import javax.swing.JOptionPane;
-import GUI.Interface.ServiceInterface;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import server.ServiceInterface;
 
 
 /**
@@ -159,7 +159,7 @@ jPanelLoginLayout.setHorizontalGroup(
         
         try{
             Registry registry = LocateRegistry.getRegistry("localhost");
-            Object obj = registry.lookup("rentalServer");
+            Object obj = registry.lookup("Yakuza Locadora de Veiculos");
             ServiceInterface serviceInterface = (ServiceInterface) obj;
             
 
