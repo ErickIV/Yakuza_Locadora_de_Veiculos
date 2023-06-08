@@ -9,8 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Erick
- * @author Rafael
+ * @author RafaelSonoki
  */
 public class Person {
     private String name;
@@ -104,7 +103,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "\n\nCUSTOMER'S INFORMATION" + "\nName=" + name + "\nSurname=" + surname + "\nNationality=" + nationality + "\nID Number=" + idNumber + "\nBirthday Date=" + birthdayDate + "\nLicence Date=" + licenceDate + "\nPhone=" + phone + "\nMail=" + mail;
+        return "\n\nINFORMAÇÃO DO CLIENTE" + "\nNome=" + name + "\nSobrenome=" + surname + "\nNacionalidade=" + nationality + "\nID Numero=" + idNumber + "\nNascimento=" + birthdayDate + "\nData CNH=" + licenceDate + "\nTelefone=" + phone + "\nEmail=" + mail;
     }
 
 

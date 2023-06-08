@@ -387,7 +387,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Microsoft JhengHei" size="12" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Numero da Habilita&#xe7;&#xe3;o"/>
+                <Property name="text" type="java.lang.String" value="Numedo da Habilita&#xe7;&#xe3;o"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JComboBox" name="jComboBoxCustomer">

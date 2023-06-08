@@ -11,8 +11,7 @@ import java.util.GregorianCalendar;
 
 /**
  *
- * @author Erick
- * @author Rafael
+ * @author RafaelSonoki
  */
 public abstract class Car implements Price {
     private int carID;
@@ -28,9 +27,9 @@ public abstract class Car implements Price {
     public ArrayList<String> rentedPrice = new ArrayList<>();
     private boolean childSeat;
     private boolean navigationSystem;
-    private boolean wiFi;
-    private boolean gps;
-    private boolean fullTank;
+    private boolean snowTire;
+    private boolean HGS;
+    private boolean scooter;
     private boolean tireProtection;
     private boolean windowProtection;
     private boolean headlightProtection;
@@ -128,7 +127,7 @@ public abstract class Car implements Price {
         output += "\n" + String.valueOf(rentedDates.get(rentedDates.size() - 2).get(Calendar.DAY_OF_MONTH)) + "/" + String.valueOf(rentedDates.get(rentedDates.size() - 2).get(Calendar.MONTH) + 1) + "/" + String.valueOf(rentedDates.get(rentedDates.size() - 2).get(Calendar.YEAR));
         output += "\n" + String.valueOf(rentedDates.get(rentedDates.size() - 1).get(Calendar.DAY_OF_MONTH)) + "/" + String.valueOf(rentedDates.get(rentedDates.size() - 1).get(Calendar.MONTH) + 1) + "/" + String.valueOf(rentedDates.get(rentedDates.size() - 1).get(Calendar.YEAR));
         
-        return "CAR'S INFORMATION" + "\nCar ID=" + carID + "\nCar Type=" + carType + "\nBrand=" + brand + "\nModel=" + model + "\nFuel Type=" + fuelType + "\nGear Type=" + gearType + "\nModel Year=" + modelYear + "\nPrice=" + price + output;
+        return "INFORMAÇÃO DO VEÍCULO" + "\nID=" + carID + "\nTipo=" + carType + "\nMarca=" + brand + "\nModelo=" + model + "\nCombustível=" + fuelType + "\nMarcha=" + gearType + "\nAno Modelo=" + modelYear + "\nPreço=" + price + output;
     }
 
     public abstract double discountedPrice();

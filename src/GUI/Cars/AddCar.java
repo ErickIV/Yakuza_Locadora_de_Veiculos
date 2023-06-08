@@ -12,7 +12,15 @@ import classes.ComfortCar;
 import classes.EconomicCar;
 import classes.LuxuryCar;
 import classes.SystemClass;
+import server.ServiceInterface;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+
 import java.awt.Color;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.border.Border;
@@ -30,6 +38,7 @@ public class AddCar extends javax.swing.JFrame {
     public AddCar() {
         initComponents();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -344,6 +353,13 @@ jTextFieldPrice.setBorder(BorderFactory.createCompoundBorder(border,
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonAddCarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddCarActionPerformed
+
+        try {
+            
+        Registry registry = LocateRegistry.getRegistry("localhost");
+        Object obj = registry.lookup("Yakuza Locadora de Veiculos");
+        ServiceInterface serviceInterface = (ServiceInterface) obj;
+
         int carID = SystemClass.id;
         String brand = jTextFieldBrand.getText();
         String model = jTextFieldModel.getText();
@@ -368,7 +384,8 @@ jTextFieldPrice.setBorder(BorderFactory.createCompoundBorder(border,
                 if (jComboBoxCarType.getSelectedItem() == null){
                     JOptionPane.showMessageDialog(this, "Por favor, escolha um tipo de carro.", "ATENÇÃO", JOptionPane.WARNING_MESSAGE); 
                 } else if(jComboBoxCarType.getSelectedItem().equals("Economic")){
-                    EconomicCar economicCar = new EconomicCar(carID, brand, model, fuelType, fuelType, modelYear, price);
+                    EconomicCar economicCar = new EconomicCar(carID, brand, model, fuelType, gearType, modelYear, price);
+                    serviceInterface.addEconomicCar(economicCar);
                     if(SystemClass.addCar(economicCar)){
                         JOptionPane.showMessageDialog(this, "O carro foi adicionado.", "BEM-SUCEDIDO", JOptionPane.INFORMATION_MESSAGE);
                         DisplayCar displayCar = new DisplayCar();
@@ -378,7 +395,8 @@ jTextFieldPrice.setBorder(BorderFactory.createCompoundBorder(border,
                         JOptionPane.showMessageDialog(this, "O carro não pode ser adicionado.", "ERRO", JOptionPane.ERROR_MESSAGE); 
                     }
                 } else if (jComboBoxCarType.getSelectedItem().equals("Comfort")){
-                    ComfortCar comfortCar = new ComfortCar(carID, brand, model, fuelType, fuelType, modelYear, price);
+                    ComfortCar comfortCar = new ComfortCar(carID, brand, model, fuelType, gearType, modelYear, price);
+                    serviceInterface.addComfortCar(comfortCar);
                     if(SystemClass.addCar(comfortCar)){
                         JOptionPane.showMessageDialog(this, "O carro foi adicionado.", "BEM-SUCEDIDO", JOptionPane.INFORMATION_MESSAGE);
                         DisplayCar displayCar = new DisplayCar();
@@ -388,7 +406,8 @@ jTextFieldPrice.setBorder(BorderFactory.createCompoundBorder(border,
                         JOptionPane.showMessageDialog(this, "O carro não pode ser adicionado.", "ERRO", JOptionPane.ERROR_MESSAGE); 
                     }
                 } else if (jComboBoxCarType.getSelectedItem().equals("Luxury")){
-                    LuxuryCar luxuryCar = new LuxuryCar(carID, brand, model, fuelType, fuelType, modelYear, price);
+                    LuxuryCar luxuryCar = new LuxuryCar(carID, brand, model, fuelType, gearType, modelYear, price);
+                    serviceInterface.addLuxuryCar(luxuryCar);
                     if(SystemClass.addCar(luxuryCar)){
                         JOptionPane.showMessageDialog(this, "O carro foi adicionado.", "BEM-SUCEDIDO", JOptionPane.INFORMATION_MESSAGE);
                         DisplayCar displayCar = new DisplayCar();
@@ -402,6 +421,12 @@ jTextFieldPrice.setBorder(BorderFactory.createCompoundBorder(border,
                 JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos.", "ATENÇÃO", JOptionPane.WARNING_MESSAGE); 
             }
         }
+
+    }catch (RemoteException ree){
+        System.out.println("Excecao: " + ree.getMessage());
+    }catch(NotBoundException nbe){
+        System.out.println("Excecao: " + nbe.getMessage());
+    }
         
         
         
