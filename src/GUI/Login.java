@@ -163,27 +163,23 @@ jPanelLoginLayout.setHorizontalGroup(
 
             String username = jTextFieldUsername.getText();
             String password = jPasswordField1.getText();
-            Boolean tryLogin = true;
 
-            if (tryLogin == true) {
+            int validation = serviceInterface.loginRequest(username, password);
 
-                int validation = serviceInterface.loginRequest(username, password);
+            if (validation == 1) {
+                RentingInformation RentingInformation = new RentingInformation();
+                RentingInformation.setVisible(true);
+                this.dispose();
 
-                if (validation == 1) {
-                    RentingInformation RentingInformation = new RentingInformation();
-                    RentingInformation.setVisible(true);
-                    this.dispose();
-                    tryLogin = false;
+            } else if (validation == 2) {
+                JOptionPane.showMessageDialog(this, "Digite um nome de usuário.", "AVISO", JOptionPane.WARNING_MESSAGE);
+            } else if (validation == 3) {
+                JOptionPane.showMessageDialog(this, "Digite uma senha.", "AVISO", JOptionPane.WARNING_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, "O nome de usuário ou a senha não está correto.", "ERROR", JOptionPane.ERROR_MESSAGE);
 
-                } else if (validation == 2) {
-                    JOptionPane.showMessageDialog(this, "Digite um nome de usuário.", "AVISO", JOptionPane.WARNING_MESSAGE);
-                } else if (validation == 3) {
-                    JOptionPane.showMessageDialog(this, "Digite uma senha.", "AVISO", JOptionPane.WARNING_MESSAGE);
-                } else {
-                    JOptionPane.showMessageDialog(this, "O nome de usuário ou a senha não está correto.", "ERROR", JOptionPane.ERROR_MESSAGE);
-                    tryLogin = false;
-                }
             }
+
         } catch (RemoteException ree) {
             System.out.println("Excecao: " + ree.getMessage());
         } catch (NotBoundException nbe) {
@@ -228,9 +224,6 @@ jPanelLoginLayout.setHorizontalGroup(
                     Person erickVieira = new Person("Erick", "Vieira", "T.C", "00849341906", "13/03/1994", "18/03/2020", "48999101832", "erickvieira@outlook.com");
                     Person guilhermeMenegotto = new Person("Guilherme", "Menegotto", "T.C.", "14865923547", "19/07/2000", "04/12/2018", "5456317589", "guimenegotoo@outlook.com");
 
-                    serviceInterface.addPerson(rafaelSonoki);
-                    serviceInterface.addPerson(erickVieira);
-                    serviceInterface.addPerson(guilhermeMenegotto);
                     SystemClass.customers.add(rafaelSonoki);
                     SystemClass.customers.add(erickVieira);
                     SystemClass.customers.add(guilhermeMenegotto);
@@ -242,12 +235,6 @@ jPanelLoginLayout.setHorizontalGroup(
                     LuxuryCar audiA3 = new LuxuryCar(5, "Audi", "A3", "Gasoline", "Automatic", 2019, 392.48);
                     LuxuryCar mercedesC200d = new LuxuryCar(6, "Mercedes-Benz", "C 200 d", "Fuel", "Automatic", 2020, 597.70);
 
-                    serviceInterface.addEconomicCar(renaultSymbol);
-                    serviceInterface.addEconomicCar(hyundaiHB20);
-                    serviceInterface.addComfortCar(toyotaCorolla);
-                    serviceInterface.addComfortCar(nissanVersa);
-                    serviceInterface.addLuxuryCar(audiA3);
-                    serviceInterface.addLuxuryCar(mercedesC200d);
                     SystemClass.cars.add(renaultSymbol);
                     SystemClass.cars.add(hyundaiHB20);
                     SystemClass.cars.add(toyotaCorolla);
