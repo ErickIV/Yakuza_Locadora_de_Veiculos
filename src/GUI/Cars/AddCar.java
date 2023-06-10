@@ -38,6 +38,7 @@ public class AddCar extends javax.swing.JFrame {
     public AddCar() {
         initComponents();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -354,77 +355,86 @@ jTextFieldPrice.setBorder(BorderFactory.createCompoundBorder(border,
     private void jButtonAddCarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddCarActionPerformed
 
         try {
+            
+        Registry registry = LocateRegistry.getRegistry("localhost");
+        Object obj = registry.lookup("Yakuza Locadora de Veiculos");
+        ServiceInterface serviceInterface = (ServiceInterface) obj;
 
-            Registry registry = LocateRegistry.getRegistry("localhost");
-            Object obj = registry.lookup("Yakuza Locadora de Veiculos");
-            ServiceInterface serviceInterface = (ServiceInterface) obj;
-
-            int carID = SystemClass.id;
-            String brand = jTextFieldBrand.getText();
-            String model = jTextFieldModel.getText();
-            String fuelType = jTextFieldFuelType.getText();
-            String gearType = "";
-            if (jRadioButtonAuto.isSelected()) {
-                gearType = "Automático";
-            }
-            if (jRadioButtonManuel.isSelected()) {
-                gearType = "Manual";
-            }
-
-            if (!SystemClass.isNumeric(jTextFieldModelYear.getText())) {
-                JOptionPane.showMessageDialog(this, "Digite um valor numérico para o campo ano.", "ATENÇÃO", JOptionPane.WARNING_MESSAGE);
-            } else if (!SystemClass.isNumeric(jTextFieldPrice.getText())) {
-                JOptionPane.showMessageDialog(this, "Digite um valor numérico para o campo de preço.", "ATENÇÃO", JOptionPane.WARNING_MESSAGE);
-            } else if (SystemClass.isNumeric(jTextFieldModelYear.getText()) && SystemClass.isNumeric(jTextFieldPrice.getText())) {
-                int modelYear = Integer.parseInt(jTextFieldModelYear.getText());
-                double price = Double.parseDouble(jTextFieldPrice.getText());
-
-                if (!brand.equals("") && !model.equals("") && !fuelType.equals("") && !gearType.equals("") && !String.valueOf(modelYear).equals("") && !String.valueOf(price).equals("")) {
-                    if (jComboBoxCarType.getSelectedItem() == null) {
-                        JOptionPane.showMessageDialog(this, "Por favor, escolha um tipo de carro.", "ATENÇÃO", JOptionPane.WARNING_MESSAGE);
-                    } else if (jComboBoxCarType.getSelectedItem().equals("Economic")) {
-                        EconomicCar economicCar = new EconomicCar(carID, brand, model, fuelType, gearType, modelYear, price);
-                        if (SystemClass.addCar(economicCar)) {
-                            JOptionPane.showMessageDialog(this, "O carro foi adicionado.", "BEM-SUCEDIDO", JOptionPane.INFORMATION_MESSAGE);
-                            DisplayCar displayCar = new DisplayCar();
-                            displayCar.setVisible(true);
-                            this.dispose();
-                        } else {
-                            JOptionPane.showMessageDialog(this, "O carro não pode ser adicionado.", "ERRO", JOptionPane.ERROR_MESSAGE);
-                        }
-                    } else if (jComboBoxCarType.getSelectedItem().equals("Comfort")) {
-                        ComfortCar comfortCar = new ComfortCar(carID, brand, model, fuelType, gearType, modelYear, price);
-                        if (SystemClass.addCar(comfortCar)) {
-                            JOptionPane.showMessageDialog(this, "O carro foi adicionado.", "BEM-SUCEDIDO", JOptionPane.INFORMATION_MESSAGE);
-                            DisplayCar displayCar = new DisplayCar();
-                            displayCar.setVisible(true);
-                            this.dispose();
-                        } else {
-                            JOptionPane.showMessageDialog(this, "O carro não pode ser adicionado.", "ERRO", JOptionPane.ERROR_MESSAGE);
-                        }
-                    } else if (jComboBoxCarType.getSelectedItem().equals("Luxury")) {
-                        LuxuryCar luxuryCar = new LuxuryCar(carID, brand, model, fuelType, gearType, modelYear, price);
-                        if (SystemClass.addCar(luxuryCar)) {
-                            JOptionPane.showMessageDialog(this, "O carro foi adicionado.", "BEM-SUCEDIDO", JOptionPane.INFORMATION_MESSAGE);
-                            DisplayCar displayCar = new DisplayCar();
-                            displayCar.setVisible(true);
-                            this.dispose();
-                        } else {
-                            JOptionPane.showMessageDialog(this, "O carro não pode ser adicionado.", "ERRO", JOptionPane.ERROR_MESSAGE);
-                        }
+        int carID = SystemClass.id;
+        String brand = jTextFieldBrand.getText();
+        String model = jTextFieldModel.getText();
+        String fuelType = jTextFieldFuelType.getText();
+        String gearType = "";
+        if(jRadioButtonAuto.isSelected()){
+            gearType = "Automático";
+        }
+        if(jRadioButtonManuel.isSelected()){
+            gearType = "Manual";
+        }
+        
+        if(!SystemClass.isNumeric(jTextFieldModelYear.getText())){
+            JOptionPane.showMessageDialog(this, "Digite um valor numérico para o campo ano.", "ATENÇÃO", JOptionPane.WARNING_MESSAGE); 
+        } else if (!SystemClass.isNumeric(jTextFieldPrice.getText())){
+            JOptionPane.showMessageDialog(this, "Digite um valor numérico para o campo de preço.", "ATENÇÃO", JOptionPane.WARNING_MESSAGE); 
+        } else if(SystemClass.isNumeric(jTextFieldModelYear.getText()) && SystemClass.isNumeric(jTextFieldPrice.getText())){
+            int modelYear = Integer.parseInt(jTextFieldModelYear.getText());
+            double price = Double.parseDouble(jTextFieldPrice.getText());
+            
+            if(!brand.equals("") && !model.equals("") && !fuelType.equals("") && !gearType.equals("") && !String.valueOf(modelYear).equals("") && !String.valueOf(price).equals("")){
+                if (jComboBoxCarType.getSelectedItem() == null){
+                    JOptionPane.showMessageDialog(this, "Por favor, escolha um tipo de carro.", "ATENÇÃO", JOptionPane.WARNING_MESSAGE); 
+                } else if(jComboBoxCarType.getSelectedItem().equals("Economic")){
+                    serviceInterface.addCar(brand, model);
+                    EconomicCar economicCar = new EconomicCar(carID, brand, model, fuelType, gearType, modelYear, price);
+                    
+                    if(SystemClass.addCar(economicCar)){
+                        JOptionPane.showMessageDialog(this, "O carro foi adicionado.", "BEM-SUCEDIDO", JOptionPane.INFORMATION_MESSAGE);
+                        DisplayCar displayCar = new DisplayCar();
+                        displayCar.setVisible(true);
+                        this.dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(this, "O carro não pode ser adicionado.", "ERRO", JOptionPane.ERROR_MESSAGE); 
                     }
-                } else {
-                    JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos.", "ATENÇÃO", JOptionPane.WARNING_MESSAGE);
+                } else if (jComboBoxCarType.getSelectedItem().equals("Comfort")){
+                    serviceInterface.addCar(brand, model);
+                    ComfortCar comfortCar = new ComfortCar(carID, brand, model, fuelType, gearType, modelYear, price);
+                    
+                    if(SystemClass.addCar(comfortCar)){
+                        JOptionPane.showMessageDialog(this, "O carro foi adicionado.", "BEM-SUCEDIDO", JOptionPane.INFORMATION_MESSAGE);
+                        DisplayCar displayCar = new DisplayCar();
+                        displayCar.setVisible(true);
+                        this.dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(this, "O carro não pode ser adicionado.", "ERRO", JOptionPane.ERROR_MESSAGE); 
+                    }
+                } else if (jComboBoxCarType.getSelectedItem().equals("Luxury")){
+                    serviceInterface.addCar(brand, model);
+                    LuxuryCar luxuryCar = new LuxuryCar(carID, brand, model, fuelType, gearType, modelYear, price);
+                    
+                    if(SystemClass.addCar(luxuryCar)){
+                        JOptionPane.showMessageDialog(this, "O carro foi adicionado.", "BEM-SUCEDIDO", JOptionPane.INFORMATION_MESSAGE);
+                        DisplayCar displayCar = new DisplayCar();
+                        displayCar.setVisible(true);
+                        this.dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(this, "O carro não pode ser adicionado.", "ERRO", JOptionPane.ERROR_MESSAGE); 
+                    }
                 }
+            } else {
+                JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos.", "ATENÇÃO", JOptionPane.WARNING_MESSAGE); 
             }
-
-        } catch (RemoteException ree) {
-            System.out.println("Excecao: " + ree.getMessage());
-        } catch (NotBoundException nbe) {
-            System.out.println("Excecao: " + nbe.getMessage());
         }
 
-
+    }catch (RemoteException ree){
+        System.out.println("Excecao: " + ree.getMessage());
+    }catch(NotBoundException nbe){
+        System.out.println("Excecao: " + nbe.getMessage());
+    }
+        
+        
+        
+        
+        
     }//GEN-LAST:event_jButtonAddCarActionPerformed
 
     private void jButtonCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCarsActionPerformed
@@ -452,7 +462,7 @@ jTextFieldPrice.setBorder(BorderFactory.createCompoundBorder(border,
     }//GEN-LAST:event_jButtonCancelActionPerformed
 
     private void jRadioButtonAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonAutoActionPerformed
-        if (jRadioButtonAuto.isSelected()) {
+        if(jRadioButtonAuto.isSelected()){
             jRadioButtonManuel.setEnabled(false);
         } else {
             jRadioButtonManuel.setEnabled(true);
@@ -460,7 +470,7 @@ jTextFieldPrice.setBorder(BorderFactory.createCompoundBorder(border,
     }//GEN-LAST:event_jRadioButtonAutoActionPerformed
 
     private void jRadioButtonManuelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonManuelActionPerformed
-        if (jRadioButtonManuel.isSelected()) {
+        if(jRadioButtonManuel.isSelected()){
             jRadioButtonAuto.setEnabled(false);
         } else {
             jRadioButtonAuto.setEnabled(true);
@@ -470,6 +480,7 @@ jTextFieldPrice.setBorder(BorderFactory.createCompoundBorder(border,
     /**
      * @param args the command line arguments
      */
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAddCar;
